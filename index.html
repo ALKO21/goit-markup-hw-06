@@ -415,7 +415,7 @@
                     <ul class="recall-list">
                         <li class="recall-item">
                             <label class="recall-label"> Имя
-                                <input class="recall-frame" type="text"placeholder=" ">
+                                <input class="recall-frame" type="text" placeholder=" " name="name">
                                 <svg class="modal-svg">
                                     <use class="svg-fill" href="./img-vect/sprite.svg#person-modal"></use>
                                 </svg>
@@ -423,7 +423,7 @@
                         </li>
                         <li class="recall-item">
                             <label class="recall-label">Телефон                                
-                                <input class="recall-frame" type="tel">
+                                <input class="recall-frame" type="tel" name="tel">
                                 <svg class="modal-svg">
                                     <use class="svg-fill" href="./img-vect/sprite.svg#phone-modal"></use>
                                 </svg>
@@ -431,22 +431,32 @@
                         </li>
                         <li class="recall-item">
                             <label class="recall-label">Почта
-                            <input class="recall-frame" type="email">
+                                <input class="recall-frame" type="email" name="email">
                                 <svg class="modal-svg">
                                     <use class="svg-fill" href="./img-vect/sprite.svg#email-modal"></use>
                                 </svg>
                             </label>
                         </li>
                         <li class="recall-item">
-                            <label class="recall-label" for="comment">Комментарий</label>
-                            <textarea   class="recall-frame recall-textarea" name="comment" id="comment" cols="10" rows="5" placeholder="Введите текст"></textarea>
+                            <label class="recall-label" >
+                                Комментарий
+                                <textarea class="recall-frame recall-textarea" name="comment" cols="10" rows="5"
+                                placeholder="Введите текст">
+                                </textarea>
+                                </label>
                         </li>
                     </ul>
                 </form>
-                    <div class="checkbox">
-                        <input type="checkbox" name="policy" id="policy">
-                        <label for="policy"> Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a> </label>
-                    </div>
+                    <label class="checkbox-label"  >
+                        <input class="checkbox-input" type="checkbox" name="policy">
+                        <svg class="checkbox-icon-border" width="15px" height="16px">
+                            <use class="checkbox-svg-fill" href="./img-vect/sprite.svg#checkbox-border"></use>
+                        </svg>
+                        <svg class="checkbox-icon-mark" width="15px" height="16px">
+                            <use class="checkbox-svg-fill" href="./img-vect/sprite.svg#checkbox-mark"></use>
+                        </svg>
+                        <span>Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a> </span>
+                    </label>
                     <button class="order-button" type="submit">Отправить</button>
             </div>
             <button data-modal-close class="modal-button" type="button">

@@ -11,6 +11,7 @@
   --color-black: #212121;
   --color-white: #ffffff;
   --color-white-background: #ffffff;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ul,
@@ -109,7 +110,7 @@ img {
   letter-spacing: 0.02em;
   line-height: 1.14;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic), fill 250ms var(--cubic);
 }
 
 /* иконки в хедере   */
@@ -397,8 +398,7 @@ img {
   height: 100%;
   border-radius: 50%;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--cubic), fill 250ms var(--cubic);
 }
 
 .member-network-link {
@@ -438,7 +438,7 @@ img {
   border: #afb1b8 1px solid;
   border-radius: 4px;
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms var(--cubic), fill 250ms var(--cubic);
 }
 .client-link:hover,
 .client-link:focus {
@@ -479,7 +479,7 @@ img {
   color: var(--color-white);
   font-style: normal;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic);
 }
 .footer-mail,
 .footer-phone {
@@ -487,7 +487,7 @@ img {
   text-decoration: none;
   font-style: normal;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--cubic);
 }
 
 .address-list:not(:last-child) {
@@ -531,7 +531,7 @@ img {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   fill: var(--color-white);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--cubic);
 }
 
 .footer-network-link:hover,
@@ -633,8 +633,8 @@ img {
   border-radius: 4px;
   border: none;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--cubic), box-shadow 250ms var(--cubic),
+    color 250ms var(--cubic);
 }
 .project-button:hover,
 .project-button:focus {
@@ -661,7 +661,7 @@ img {
   text-decoration: none;
   color: var(--color-black);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms var(--cubic);
 }
 
 .picture-def:nth-child(3n) {
@@ -713,8 +713,7 @@ img {
   line-height: 1.5555;
 
   transform: translateY(100%);
-  transition: transform 250ms ease, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms ease, background-color 250ms var(--cubic), color 250ms var(--cubic);
 }
 
 .project-link:hover .project-overlay,
@@ -738,7 +737,7 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms var(--cubic);
 }
 
 .backdrop.is-hidden {
@@ -762,7 +761,7 @@ img {
   border-radius: 4px;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms, var(--cubic);
 }
 
 .backdrop.is-hidden .modal {
@@ -826,11 +825,6 @@ img {
   color: var(--color-black);
 }
 
-/* .recall-item {
-  display: flex;
-  flex-direction: column;
-} */
-
 .recall-form {
   margin-bottom: 20px;
 }
@@ -839,6 +833,7 @@ img {
   position: relative;
   display: block;
   margin-bottom: 4px;
+  margin-top: 10px;
 
   font-size: 12px;
   line-height: calc(14 / 12);
@@ -850,14 +845,21 @@ img {
 .recall-frame {
   width: 100%;
 
+  padding-left: 42px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-  height: 40px;
+
+  font-size: 16px;
 
   cursor: pointer;
 
   resize: none;
+
+  transition: border 250ms var(--cubic);
 }
 
 .recall-frame:focus-within {
@@ -866,12 +868,6 @@ img {
 
 .recall-frame:focus-within + .modal-svg {
   fill: var(--color-accent);
-}
-
-.recall-item input {
-  padding-left: 42px;
-  padding-top: 12px;
-  padding-bottom: 12px;
 }
 
 .modal-svg {
@@ -884,6 +880,8 @@ img {
 
   width: 18px;
   height: 18px;
+
+  transition: fill 250ms var(--cubic);
 }
 
 .svg-fill {
@@ -908,14 +906,42 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.checkbox {
+/* Checkbox */
+
+.checkbox-label {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin-bottom: 30px;
 }
 
-.checkbox label {
+.checkbox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.checkbox-icon-border {
+  opacity: 1;
+}
+.checkbox-icon-mark {
+  position: absolute;
+  top: 18%;
+  left: 13px;
+
+  opacity: 0;
+
+  transition: opacity 250ms var(--cubic);
+}
+
+.checkbox-input:checked ~ .checkbox-icon-mark {
+  opacity: 1;
+}
+
+.checkbox-label span {
   margin-left: 7px;
 
   font-size: 14px;
@@ -923,9 +949,12 @@ img {
   letter-spacing: 0.03em;
   color: var(--color-gray);
 }
-.checkbox a {
+
+.checkbox-label a {
   color: var(--color-accent);
 }
+
+/* Button submit */
 
 .modal-section button {
   display: block;
