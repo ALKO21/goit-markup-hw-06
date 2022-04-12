@@ -393,22 +393,17 @@
 <!-- Subscription -->
             <div class="subscription-section">
                 <h3 class="subscription-title">Подпишитесь на рассылку</h3>
-                <div class="subscription-block">
                     <form class="subscription-form">
                         <label class="subscription-label" for="email"></label>
                         <input class="subscription-input" type="email" name="subscription" id="email" placeholder="E-mail" />
+                        <button class="subscription-btn" type="submit">
+                            Подписаться
+                            <svg class="icon-send" width="24" height="24">
+                                <use class="svg-send" href="./img-vect/sprite.svg#icon-send"></use>
+                            </svg>
+                        </button>
                     </form>
-                    <button class="subscription-btn" type="submit">                        
-                        Подписаться
-                        <svg class="icon-send" width="24" height="24">
-                            <use class="svg-send" href="./img-vect/sprite.svg#icon-send"></use>
-                        </svg>
-                    </button>
-                    
-                </div>
             </div>
-
-
         </div>
     </footer>
 <!-- Модальное окно -->
@@ -419,44 +414,40 @@
                 <form class="recall-form">
                     <ul class="recall-list">
                         <li class="recall-item">
-                            <label class="recall-label" for="name">Имя</label>
-                            <div class="modal-icon-possition">
-                                <input class="recall-frame" type="text" id="name" placeholder=" ">
+                            <label class="recall-label"> Имя
+                                <input class="recall-frame" type="text"placeholder=" ">
                                 <svg class="modal-svg">
-                                    <use class="svg-fill"  href="./img-vect/sprite.svg#person-modal"></use>
+                                    <use class="svg-fill" href="./img-vect/sprite.svg#person-modal"></use>
                                 </svg>
-                            </div>
+                            </label>
                         </li>
                         <li class="recall-item">
-                            <label class="recall-label" for="tel">Телефон</label>
-                            <div class="modal-icon-possition">
-                            <input class="recall-frame" type="tel" id="tel">
+                            <label class="recall-label">Телефон                                
+                                <input class="recall-frame" type="tel">
                                 <svg class="modal-svg">
                                     <use class="svg-fill" href="./img-vect/sprite.svg#phone-modal"></use>
                                 </svg>
-                            </div>
-                            
+                            </label>
                         </li>
                         <li class="recall-item">
-                            <label class="recall-label" for="mail">Почта</label>
-                            <div class="modal-icon-possition">
-                            <input class="recall-frame" type="email" id="mail">
+                            <label class="recall-label">Почта
+                            <input class="recall-frame" type="email">
                                 <svg class="modal-svg">
                                     <use class="svg-fill" href="./img-vect/sprite.svg#email-modal"></use>
                                 </svg>
-                            </div>
+                            </label>
                         </li>
                         <li class="recall-item">
                             <label class="recall-label" for="comment">Комментарий</label>
                             <textarea   class="recall-frame recall-textarea" name="comment" id="comment" cols="10" rows="5" placeholder="Введите текст"></textarea>
                         </li>
                     </ul>
+                </form>
                     <div class="checkbox">
                         <input type="checkbox" name="policy" id="policy">
                         <label for="policy"> Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a> </label>
                     </div>
                     <button class="order-button" type="submit">Отправить</button>
-                </form>
             </div>
             <button data-modal-close class="modal-button" type="button">
                 <svg class="svg-close" width="18" height="18">
